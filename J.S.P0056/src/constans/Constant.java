@@ -10,7 +10,9 @@ package constans;
  * @author ngnqu
  */
 public class Constant {
+
     public static final String REGEX_CODE = "^[A-Za-z0-9 ]*$";
-    public static final String REGEX_NAME = "^[A-Za-z\\s]*$";
-    public static final String REGEX_SPECIALIZATION = "^[A-Za-z\\s ]*$";
+    public static final String REGEX_NAME = "^[A-Za-z\\s ]*$";
+    public static final String REGEX_WOKR_LOCATION = "^[A-Za-z\\s ]*$";
+    public static final String REGEX_YES_OR_NO = "^[YyNn]$";
 }
