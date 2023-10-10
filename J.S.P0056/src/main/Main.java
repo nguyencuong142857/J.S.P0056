@@ -67,9 +67,44 @@ public class Main {
                     }
                     break;
                 case 2:
-
+                    while (true) {
+                        String code = Validation.getStringWithRegex(
+                                "Enter Code: ", "messageErrorInvalid",
+                                Constant.REGEX_CODE);
+                        double salary = Validation.getDouble("Enter Salary: ",
+                                "Must be > 0!", "Must be a double!",
+                                Double.MIN_VALUE, Double.MAX_VALUE);
+                        workerBO.increaseSalary(code, salary);
+                        String choiceYorN = Validation.getStringWithRegex(
+                                "Do you want to continue? (Y/N): ",
+                                "messageErrorInvalid",
+                                Constant.REGEX_YES_OR_NO);
+                        if (choiceYorN.equalsIgnoreCase("N")) {
+                            break; // Kết thúc vòng lặp nếu người dùng chọn "N" hoặc "n"
+                        }
+                    }
+                    break;
                 case 3:
+                    while (true) {
+                        String code = Validation.getStringWithRegex(
+                                "Enter Code: ", "messageErrorInvalid",
+                                Constant.REGEX_CODE);
+                        double salary = Validation.getDouble("Enter Salary: ",
+                                "Must be > 0!", "Must be a double!",
+                                Double.MIN_VALUE, Double.MAX_VALUE);
+                        workerBO.decreaseSalary(code, salary);
+                        String choiceYorN = Validation.getStringWithRegex(
+                                "Do you want to continue? (Y/N): ",
+                                "messageErrorInvalid",
+                                Constant.REGEX_YES_OR_NO);
+                        if (choiceYorN.equalsIgnoreCase("N")) {
+                            break; // Kết thúc vòng lặp nếu người dùng chọn "N" hoặc "n"
+                        }
+                    }
+                    break;
                 case 4:
+                    workerBO.displaySalaryList();
+                    break;
                 case 5:
                     workerBO.displayAllWorker();
                     break;

@@ -60,24 +60,15 @@ public class Validation {
         do {
             System.out.print(messageInfo);
             String input = SCANNER.nextLine();
+            if (input.isEmpty()) { // Kiểm tra nếu chuỗi rỗng
+                System.err.println(messageErrorInvalid);
+                continue;
+            }
             Matcher matcher = pattern.matcher(input);
             if (matcher.matches()) {
                 return input;
             }
             System.err.println(messageErrorInvalid);
-        } while (true);
-    }
-
-    public static String getSring(String info,String error,String regex) {
-        Pattern pattern = Pattern.compile(regex);
-        do {  
-            System.out.print(info);
-            String input = SCANNER.nextLine();
-            Matcher matcher = pattern.matcher(input);
-            if (matcher.matches()) {
-                return input;
-            }
-            System.err.println(error);
         } while (true);
     }
     

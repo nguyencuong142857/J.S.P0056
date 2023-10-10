@@ -14,17 +14,17 @@ import java.util.Date;
 public class SalaryInfomation extends Worker {
 
     private String status;
-    private Date date;
+    private String date;
 
     public SalaryInfomation() {
     }
 
-    public SalaryInfomation(String status, Date date) {
+    public SalaryInfomation(String status, String date) {
         this.status = status;
         this.date = date;
     }
 
-    public SalaryInfomation(String status, Date date, String code, String name, int age, double salary, String workLocation) {
+    public SalaryInfomation(String status, String date, String code, String name, int age, double salary, String workLocation) {
         super(code, name, age, salary, workLocation);
         this.status = status;
         this.date = date;
@@ -38,11 +38,11 @@ public class SalaryInfomation extends Worker {
         this.status = status;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }
